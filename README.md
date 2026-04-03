@@ -1,16 +1,110 @@
-# sermon_mobile
+# SerMon Mobile App
 
-A new Flutter project.
+## Описание
 
-## Getting Started
+Мобильное приложение для мониторинга серверов и управления инцидентами.
 
-This project is a starting point for a Flutter application.
+Функции:
 
-A few resources to get you started if this is your first Flutter project:
+* просмотр серверов
+* просмотр метрик
+* управление инцидентами
+* комментарии
+* управление пользователями (для администратора)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Требования
+
+* Flutter 3.x
+* Android / Windows / Emulator
+* Backend доступен по сети
+
+---
+
+## Настройка
+
+Укажите base URL backend в приложении:
+
+```dart
+http://192.168.1.70:8080/api/v1
+```
+
+Не использовать localhost.
+
+---
+
+## Установка зависимостей
+
+```bash
+flutter pub get
+```
+
+---
+
+## Запуск
+
+```bash
+flutter run
+```
+
+---
+
+## Сборка APK
+
+```bash
+flutter build apk
+```
+
+---
+
+## Вход в систему
+
+Начальные данные:
+
+```text
+admin / admin
+operator / operator123
+```
+
+При первом входе требуется смена пароля.
+
+---
+
+## Проверка работы
+
+1. Войти в приложение
+2. Перейти в серверы
+3. Добавить сервер
+4. Получить agent_token
+5. Настроить агент
+6. Запустить агент
+7. Проверить появление метрик
+8. Проверить инциденты
+
+---
+
+## Возможные проблемы
+
+### Нет подключения к backend
+
+Проверь:
+
+* IP backend
+* сеть (один Wi-Fi)
+* firewall
+
+### Ошибка авторизации
+
+Проверь:
+
+* логин и пароль
+* токен
+
+---
+
+## Примечания
+
+* Приложение работает по HTTP в локальной сети
+* Для production рекомендуется использовать HTTPS
+* Backend должен быть доступен по IP адресу
